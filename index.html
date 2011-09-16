@@ -10,30 +10,30 @@
             #sortable li { background-color: #f0f0ff; border: 1px solid #ffffff; padding: 5px; margin: 5px; cursor: pointer; text-align: left; }
             #sortable li.ui-sortable-helper { background-color: #e0e0ff; border: 1px solid #c0c0ff; }
         </style>
-        <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
-        <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/jquery-ui.dnd4sortable.min.js"></script>
         <script type="text/javascript">
-		<!--
+        <!--
             $(function(){
 
                 // sortable
                 $('#sortable').sortable();
 
-               // dnd4sortable
+                // dnd4sortable
                 $('#sortable').dnd4sortable({
                     drop: function(event) {
 
-						// this is just a sample of what can be done using the File API
-						if (event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files.length) {
-							this.dummy().text( 'Found '+event.dataTransfer.files.length+' file(s)' );
-						} else {
-							this.revert();
-						}
+                        // this is just a sample of what can be done using the File API
+                        if (event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files.length) {
+                            this.dummy().text( 'Found '+event.dataTransfer.files.length+' file(s)' );
+                        } else {
+                            this.revert();
+                        }
                     }
                 });
             });
-		//-->
+        //-->
         </script>
     </head>
     <body>
