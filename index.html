@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Drag and drop #0.4</title>
+        <style type="text/css">
+            body{ font: 100% "Trebuchet MS", sans-serif; padding: 50px; }
+            h1 { margin: 20px 0 0; }
+            #sortable { list-style-type: none; margin: 0 30px 30px 0; padding: 5px; border: 1px solid #aaa; width: 300px; }
+            #sortable li { background-color: #f0f0ff; border: 1px solid #ffffff; padding: 5px; margin: 5px; cursor: pointer; text-align: left; }
+            #sortable li.ui-sortable-helper { background-color: #e0e0ff; border: 1px solid #c0c0ff; }
+        </style>
+        <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui.dnd4sortable.min.js"></script>
+        <script type="text/javascript">
+		<!--
+            $(function(){
+
+                // sortable
+                $('#sortable').sortable();
+
+               // dnd4sortable
+                $('#sortable').dnd4sortable({
+                    drop: function(event) {
+
+						// this is just a sample of what can be done using the File API
+						if (event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files.length) {
+							this.dummy().text( 'Found '+event.dataTransfer.files.length+' file(s)' );
+						} else {
+							this.revert();
+						}
+                    }
+                });
+            });
+		//-->
+        </script>
+    </head>
+    <body>
+        <h1>D 'n' D <sub>#0.4</sub></h1>
+        <p>Drag a file or a set of files over the sortable list visible below.</p>
+
+        <ul id="sortable" title="sortable">
+            <li>this</li>
+            <li>list</li>
+            <li>is</li>
+            <li>sortable</li>
+        </ul>
+    </body>
+</html>
