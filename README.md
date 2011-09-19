@@ -44,7 +44,11 @@ Available options:
 
 * dummyTag - Defines the tag name of the node that will be added when the dragging will start, the dummy tag should be equal to all tags available inside the sortable component. Default value is **li**.
 * dummyText - Defines the text that will be inserted into the dummy tag when it is created. The dummy text will be visible at least till the file is dropped on the sortable component. Default value is **...**.
-* drop - Callback function executed when the file is dropped on the sortable component. The callback function takes one parameter - the event object. The callback is executed with the widget available as the *this* variable.  Default callback is **an empty function**.
+* drop - Callback function executed when the file is dropped on the sortable component.
+* dragIn - Callback function executed when the dragged file enters the area of the sortable component.
+* dragOut - Callback function executed when the dragged file leaves the area of the sortable component.
+
+All callback functions take one parameter - the event object. Each callback is executed with the widget available as the *this* variable.  All default callbacks are **empty functions**.
 
 The dnd4sortable widget has additional methods:
 
@@ -58,3 +62,13 @@ Those methods can be called by typing:
 
     // in the drop callback:
     this.revert();
+
+# Changelog
+
+Version 0.5:
+
+* Callbacks dragIn and dragOut added.
+
+Version 0.4:
+
+* First public release.

@@ -1,6 +1,6 @@
 /**
  * Drag and drop for the jQuery UI sortable widget
- * Version: 0.4
+ * Version: 0.5
  * Copyright (c) Tom Wojcik
  * Licenced under the BeerWare licence.
  */
@@ -14,7 +14,9 @@
         options: {
             dummyTag: 'li',
             dummyText: '...',
-            drop: function(event) {}
+            drop: function(event) {},
+            dragIn: function(event) {},
+            dragOut: function(event) {}
         },
 
         /**
@@ -41,6 +43,8 @@
             var dummy = $(document.createElement(self.options.dummyTag));
             dummy.text(self.options.dummyText);
             $(self.element).data(self.widgetName+'Dummy', dummy);
+
+            self.options.dragIn.call(self, event.originalEvent);
         },
 
         /**
@@ -59,6 +63,8 @@
                 sortable._mouseStop(event);
                 dummy.remove();
             }
+
+            self.options.dragOut.call(self, event.originalEvent);
         },
 
         /**
