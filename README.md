@@ -42,8 +42,12 @@ The widgets behaviour can be customized using the options parameter. Sample usag
 
 Available options:
 
-* dummyTag - Defines the tag name of the node that will be added when the dragging will start, the dummy tag should be equal to all tags available inside the sortable component. Default value is **li**.
-* dummyText - Defines the text that will be inserted into the dummy tag when it is created. The dummy text will be visible at least till the file is dropped on the sortable component. Default value is **...**.
+* dummy - Object used to create a new sortable element. Attributes described below:
+    * tag - Defines the tag name of the node that will be added when the dragging will start, the dummy tag should be equal to all tags available inside the sortable component. Default value is **li**.
+    * text - Defines the text that will be inserted into the dummy tag when it is created. The dummy text will be visible at least till the file is dropped on the sortable component. If the text is set to false it won't be applied on the dummy node. Default value is **...**.
+    * html - Defines the HTML contents that will be inserted into the dummy tag when it is created. The dummy HTML will be visible at least till the file is dropped on the sortable component. If the HTML is set to false it won't be applied on the dummy node. Default value is **false**.
+    * attr - A map of attribute-value pairs to set as attributes of the dummy node. Default value is **an empty object**.
+    * css - A map of attribute-value pairs to set as style properties of the dummy node. Default value is **an empty object**.
 * drop - Callback function executed when the file is dropped on the sortable component.
 * dragIn - Callback function executed when the dragged file enters the area of the sortable component.
 * dragOut - Callback function executed when the dragged file leaves the area of the sortable component.
@@ -64,6 +68,10 @@ Those methods can be called by typing:
     this.revert();
 
 # Changelog
+
+Version 0.6:
+
+* New options for the dummy node added.
 
 Version 0.5:
 
