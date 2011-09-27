@@ -1,8 +1,10 @@
 /**
  * Drag and drop for the jQuery UI sortable widget
  * Version: 0.6
- * Copyright (c) Tom Wojcik
- * Licenced under the BeerWare licence.
+ * https://github.com/elwiz/dnd4sortable
+ * 
+ * Copyright 2011, Tom Wojcik
+ * Licensed under the MIT license: http://opensource.org/licenses/MIT
  */
 (function( $, undefined ) {
 
